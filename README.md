@@ -59,7 +59,7 @@ Event footage is saved for highlights or analysis
 
 Clone the repository:
 
-git clone https://github.com/Brandi-Kinard/opencv-intrusion-detection.git
+git clone https://github.com/Walker49x/Intrusion-Event-Detection-System.git
 
 
 Open the notebook locally or via Google Colab (recommended).
