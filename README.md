@@ -1,50 +1,120 @@
-# OpenCV Intrusion Detection System
-<a target="_blank" href="https://colab.research.google.com/github/Brandi-Kinard/opencv-intrusion-detection/blob/main/Intrusion_Detection_Application.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
+OpenCV Zone-Based Game Event Detection System
 
-## Overview
-Welcome to the repository of the OpenCV Intrusion Detection System, a sophisticated tool designed to enhance security by monitoring surveillance video streams for unusual activities. This system not only identifies intrusions but also archives relevant video segments for further analysis and can trigger alerts to notify security personnel.
+(Python · OpenCV · Video Processing)
 
-<img width="1267" alt="image" src="https://github.com/Brandi-Kinard/opencv-intrusion-detection/assets/52756042/70c02253-2659-4c75-9526-617c73683890">
+Open in Colab
+
+📌 Overview
+
+This project demonstrates a zone-based computer vision system designed for interactive physical games. Using real-time video processing, the system monitors player movement and triggers game events when predefined rules are violated, such as entering restricted zones or crossing virtual boundaries.
+
+In addition to detecting events, the system records highlight video segments, enabling automated generation of gameplay clips and post-game analysis.
+
+🎯 Why This Project Matters
+
+Modern arcade and physical games increasingly rely on computer vision to automate gameplay logic.
+This project showcases how traditional surveillance-style vision techniques can be repurposed to build:
+
+Laser-vault style challenges
+
+Motion-based arcade games
+
+Escape-room mechanics
+
+Automated rule enforcement without wearables or sensors
+
+The system demonstrates how player movement → vision logic → game events can be implemented efficiently using Python and OpenCV.
+
+⚙️ How It Works
+
+The gameplay logic is built using a classical computer vision pipeline:
+
+1️⃣ Background Subtraction
+
+Uses createBackgroundSubtractorKNN() to separate moving players from the static environment.
+
+2️⃣ Noise Reduction
+
+Applies morphological erosion to eliminate minor noise and ensure stable motion detection.
+
+3️⃣ Motion & Contour Analysis
+
+Extracts contours from foreground regions using findContours() to identify significant movement areas.
+
+4️⃣ Zone-Based Event Logic
+
+Evaluates the size and spatial location of detected motion to determine whether a game event (zone breach) has occurred.
+
+5️⃣ Event Triggering & Video Capture
+
+When a rule is violated:
+
+A visual game alert is displayed
+
+Relevant gameplay frames are recorded
+
+Event footage is saved for highlights or analysis
+
+🧪 How to Run the Project
+
+Clone the repository:
+
+git clone https://github.com/Brandi-Kinard/opencv-intrusion-detection.git
 
 
+Open the notebook locally or via Google Colab (recommended).
 
-## Why This Project is Important
-In today's world, the safety and security of physical spaces are paramount. This project leverages computer vision and machine learning to provide a vigilant, always-on watch over sensitive areas, ensuring that any unusual activity is promptly detected and addressed. It's particularly useful in settings such as banks, stores, and private properties.
+Install the required dependencies (see below).
 
-## How It Works
-- **Background Subtraction**: Uses `createBackgroundSubtractorKNN()` to differentiate moving objects from the static background.
-- **Noise Reduction**: Applies erosion to the foreground masks to minimize noise, ensuring that motion detection is accurate.
-- **Motion Detection**: Analyzes the shapes in the video via `findContours()` to capture the contours of moving objects.
-- **Intrusion Identification**: Identifies potential intrusions by assessing the size and location of the largest moving object.
-- **Alerts and Record-Keeping**: When an intrusion is detected, the system saves the relevant video segment and can trigger an alert.
+Run the notebook cells sequentially to observe:
 
-## How to Use This Project
-To get started with this motion detection notebook:
-1. Clone this repository to your local machine using `git clone https://github.com/Brandi-Kinard/opencv-intrusion-detection.git`
-2. Ensure you have Jupyter Notebook installed, or use **Google Colab** (accessible via the "Open in Colab" badge above) to open the notebook.
-3. Install necessary libraries (listed in the Prerequisites section below).
-4. Run the notebook cells sequentially to observe motion detection in action.
+Motion detection
 
-## Prerequisites
-Ensure you have the following installed:
+Zone breach detection
 
-- Python 3.6+
-- OpenCV (opencv-python)
-- Matplotlib
-- IPython (for Jupyter functionality)
-- Moviepy
-- Imageio
-- Numpy
+Event-triggered video output
 
-Install these packages using pip:
-```bash
+🛠️ Tech Stack & Prerequisites
+
+Ensure the following are installed:
+
+Python 3.6+
+
+OpenCV (opencv-python)
+
+NumPy
+
+Matplotlib
+
+MoviePy
+
+ImageIO
+
+IPython (for Jupyter)
+
+Install dependencies:
 pip install opencv-python matplotlib ipython moviepy numpy imageio
-```
 
-## For the Future
-If you want to add more, Please don't hesitate to open a [pull request](https://github.com/Brandi-Kinard/opencv-intrusion-detection/pulls).
+🚀 Potential Enhancements
 
-## 👋 Get in Touch
-[![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brandi-kinard)
+Multi-player tracking
+
+Dynamic difficulty thresholds
+
+Score-based game mechanics
+
+Real-time audio/visual feedback
+
+Integration with Unity or web dashboards
+
+🎮 Use Cases
+
+Motion-based arcade games
+
+Laser-vault challenges
+
+Escape room automation
+
+Interactive installations
+
+Gameplay highlight generation
