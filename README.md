@@ -1,19 +1,13 @@
 OpenCV Zone-Based Game Event Detection System
-
-(Python · OpenCV · Video Processing)
-
-Open in Colab
+Tech Stack: Python · OpenCV · Video Processing
 
 📌 Overview
-
 This project demonstrates a zone-based computer vision system designed for interactive physical games. Using real-time video processing, the system monitors player movement and triggers game events when predefined rules are violated, such as entering restricted zones or crossing virtual boundaries.
 
 In addition to detecting events, the system records highlight video segments, enabling automated generation of gameplay clips and post-game analysis.
 
 🎯 Why This Project Matters
-
-Modern arcade and physical games increasingly rely on computer vision to automate gameplay logic.
-This project showcases how traditional surveillance-style vision techniques can be repurposed to build:
+Modern arcade and physical games increasingly rely on computer vision to automate gameplay logic. This project showcases how traditional surveillance-style vision techniques can be repurposed to build:
 
 Laser-vault style challenges
 
@@ -23,62 +17,34 @@ Escape-room mechanics
 
 Automated rule enforcement without wearables or sensors
 
-The system demonstrates how player movement → vision logic → game events can be implemented efficiently using Python and OpenCV.
+The system demonstrates how the flow of player movement → vision logic → game events can be implemented efficiently using Python and OpenCV.
 
 ⚙️ How It Works
-
 The gameplay logic is built using a classical computer vision pipeline:
 
-1️⃣ Background Subtraction
-
+1. Background Subtraction
 Uses createBackgroundSubtractorKNN() to separate moving players from the static environment.
 
-2️⃣ Noise Reduction
-
+2. Noise Reduction
 Applies morphological erosion to eliminate minor noise and ensure stable motion detection.
 
-3️⃣ Motion & Contour Analysis
-
+3. Motion & Contour Analysis
 Extracts contours from foreground regions using findContours() to identify significant movement areas.
 
-4️⃣ Zone-Based Event Logic
-
+4. Zone-Based Event Logic
 Evaluates the size and spatial location of detected motion to determine whether a game event (zone breach) has occurred.
 
-5️⃣ Event Triggering & Video Capture
-
+5. Event Triggering & Video Capture
 When a rule is violated:
 
-A visual game alert is displayed
+A visual game alert is displayed.
 
-Relevant gameplay frames are recorded
+Relevant gameplay frames are recorded.
 
-Event footage is saved for highlights or analysis
-
-🧪 How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/Brandi-Kinard/opencv-intrusion-detection.git
-
-
-Open the notebook locally or via Google Colab (recommended).
-
-Install the required dependencies (see below).
-
-Run the notebook cells sequentially to observe:
-
-Motion detection
-
-Zone breach detection
-
-Event-triggered video output
+Event footage is saved for highlights or analysis.
 
 🛠️ Tech Stack & Prerequisites
-
-Ensure the following are installed:
-
-Python 3.6+
+Ensure you have Python 3.6+ installed along with the following libraries:
 
 OpenCV (opencv-python)
 
@@ -90,31 +56,44 @@ MoviePy
 
 ImageIO
 
-IPython (for Jupyter)
+IPython (for Jupyter/Colab environments)
 
-Install dependencies:
+Installation
+Bash
+
 pip install opencv-python matplotlib ipython moviepy numpy imageio
+🧪 Getting Started
+Follow these steps to run the project locally:
 
-🚀 Potential Enhancements
+Clone the repository:
 
-Multi-player tracking
+Bash
 
-Dynamic difficulty thresholds
+git clone https://github.com/Brandi-Kinard/opencv-intrusion-detection.git
+Open the notebook: Open the .ipynb file locally or via Google Colab.
 
-Score-based game mechanics
+Run cells: Execute the cells sequentially to observe:
 
-Real-time audio/visual feedback
+Motion detection
 
-Integration with Unity or web dashboards
+Zone breach detection
+
+Event-triggered video output
 
 🎮 Use Cases
+Arcade Gaming: Motion-based scoring systems.
 
-Motion-based arcade games
+Physical Security: Laser-vault challenges.
 
-Laser-vault challenges
+Automation: Escape room interaction logic.
 
-Escape room automation
+Analytics: Gameplay highlight generation for sports or esports.
 
-Interactive installations
+🚀 Potential Enhancements
+[ ] Multi-player tracking: Identifying and tracking separate IDs.
 
-Gameplay highlight generation
+[ ] Dynamic Difficulty: Adjusting detection thresholds in real-time.
+
+[ ] Integrations: Connecting events to Unity or web-based dashboards.
+
+[ ] Feedback: Adding real-time audio cues upon breach detection.
